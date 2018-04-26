@@ -1,0 +1,25 @@
+{
+  "name": "user-data",
+  "version": "1.0.0",
+  "description": "educational project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kurolap/User-data.git"
+  },
+  "keywords": [
+    "xxx"
+  ],
+  "author": "Kurolap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kurolap/User-data/issues"
+  },
+  "homepage": "https://github.com/Kurolap/User-data#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
