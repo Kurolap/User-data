@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Kurolap/User-data/issues"
   },
-  "homepage": "https://github.com/Kurolap/User-data#readme"
+  "homepage": "https://github.com/Kurolap/User-data#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
