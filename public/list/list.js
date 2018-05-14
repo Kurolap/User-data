@@ -27,11 +27,14 @@ $(document).ready(function() {
     function createFunctionRemove() {
         $(".glyphicon-trash").click(function(event) {
             var id = event.target.id;
-            var chosen_person = _.find(data, function(person) { return person.id === id; });
-            data = _.filter(data, function(person) {
-                return person.id !== id;
-            });
-            render();
+            var id_conf = confirm("Are you sure to delete this person?");
+            if (id_conf == true) {
+                var chosen_person = _.find(data, function(person) { return person.id === id; });
+                data = _.filter(data, function(person) {
+                    return person.id !== id;
+                });
+                render();
+            }
         });
     }
     createFunctionRemove();

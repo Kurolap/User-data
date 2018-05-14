@@ -3,3 +3,6 @@
     width: 90%;
     text-align: left;
 }
+.glyphicon {
+    cursor: pointer;
+}
