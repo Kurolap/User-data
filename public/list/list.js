@@ -27,9 +27,8 @@ $(document).ready(function() {
     function createFunctionRemove() {
         $(".glyphicon-trash").click(function(event) {
             var id = event.target.id;
-            var id_conf = confirm("Are you sure to delete this person?");
+            var id_conf = confirm("Are you sure to remove this person from the list?");
             if (id_conf == true) {
-                var chosen_person = _.find(data, function(person) { return person.id === id; });
                 data = _.filter(data, function(person) {
                     return person.id !== id;
                 });
@@ -37,5 +36,4 @@ $(document).ready(function() {
             }
         });
     }
-    createFunctionRemove();
-});
+   });

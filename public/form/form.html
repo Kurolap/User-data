@@ -1,21 +1,29 @@
-<h1>Add/Edit User</h1>
-<form>
+<h1 align="center">Add/Edit User</h1>
+<link rel="stylesheet" href="form/form.css">
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+<form id="position">
    <div>
-    <input type="text" name="First Name" placeholder="Enter your first name">
+       <label>First Name</label>
+       <input type="text" name="First Name" placeholder="Enter your first name">
    </div>
     <div>
+        <label>Second Name</label>
         <input type="text" name="Second Name" placeholder="Enter your second name">
     </div>
-        <div>
-        <select name="Gender">
-            <option selected value="male">
-            <select value="female">
+    <div>
+        <label>Gender</label>
+        <select>
+            <option>male</option>
+            <option>female</option>
         </select>
     </div>
     <div>
+        <label>Birth Date</label>
         <input type="date" name="Birth date" placeholder="Enter your birth date">
     </div>
     <div>
+        <label>Email</label>
         <input type="text" name="Email" placeholder="Enter your email">
     </div>
-    </form>
+</form>
+
