@@ -1,9 +1,4 @@
 $(document).ready(function() {
-    var data = [
-        {id: "1", first_name: "Sergey", second_name: "Akulov", gender: "male", age: 29, email: "akulov@mail.com"},
-        {id: "2", first_name: "Ivan", second_name: "Petrov", gender: "male", age: 28, email: "petrov@mail.com"},
-        {id: "3", first_name: "Elena", second_name: "Sidorova", gender: "female", age: 25, email: "sidorova@mail.com"},
-    ];
 
     function render() {
         var content = "";
@@ -25,9 +20,9 @@ $(document).ready(function() {
     render();
 
     function createFunctionRemove() {
-        $(".glyphicon-trash").click(function(event) {
+        $('.glyphicon-trash').click(function(event) {
             var id = event.target.id;
-            var id_conf = confirm("Are you sure to remove this person from the list?");
+            var id_conf = confirm("Are you sure to remove this user from the list?");
             if (id_conf == true) {
                 data = _.filter(data, function(person) {
                     return person.id !== id;
@@ -36,4 +31,9 @@ $(document).ready(function() {
             }
         });
     }
-   });
+
+    $('#add').click(function(event) {
+        $('#form').show();
+        $('#list').hide();
+    });
+});
