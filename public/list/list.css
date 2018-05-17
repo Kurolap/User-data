@@ -1,5 +1,8 @@
 .list {
     margin: 10px auto;
-    width: 90%;
+    width: 90% !important;
     text-align: left;
+}
+.glyphicon {
+    cursor: pointer;
 }
