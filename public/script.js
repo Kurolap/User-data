@@ -9,12 +9,13 @@ $(document).ready(function() {
         url: "list/list.html",
         success: function(result) {
             $("#list").html(result);
+            $.ajax({
+                url: "form/form.html",
+                success: function(result) {
+                    $("#form").html(result);
+                }
+            });
         }
     });
-    $.ajax({
-        url: "form/form.html",
-        success: function(result) {
-            $("#form").html(result);
-        }
-    });
+
 });
