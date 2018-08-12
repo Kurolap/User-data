@@ -1,6 +1,6 @@
 $(document).ready(function() {
    render();
-   function switchToForm() {
+   function switchToAdd() {
        $('#form').show();
        $('#list').hide();
        var newTxt = '';
@@ -12,22 +12,24 @@ $(document).ready(function() {
        $("#date").val(newTxt);
    }
 
-    function currentForm() {
+    function switchtoEdit() {
         $('#form').show();
         $('#list').hide();
    }
 
     $('#add').click(function(event) {
-        switchToForm();
+        switchToAdd();
     });
 
     $('.glyphicon-pencil').click(function(event) {
-        currentForm();
-        $("#fname").val(data[2].first_name);
-        $("#sname").val(data[0].second_name);
-        $("#email").val(data[0].email);
+        switchtoEdit();
+        var id = event.target.attributes.id.value;
+        console.log(event);
+        $("#fname").val(data[id].first_name);
+        $("#sname").val(data[id].second_name);
+        $("#email").val(data[id].email);
         $("#pwd").val('newTxtmm');
-        $("#gender").val(data[0].gender);
+        $("#gender").val(data[id].gender);
         $("#date").val('newTxt');
     });
 });
