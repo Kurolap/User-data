@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    render();
+   render();
    function switchToForm() {
        $('#form').show();
        $('#list').hide();
@@ -12,11 +12,22 @@ $(document).ready(function() {
        $("#date").val(newTxt);
    }
 
+    function currentForm() {
+        $('#form').show();
+        $('#list').hide();
+   }
+
     $('#add').click(function(event) {
         switchToForm();
     });
 
     $('.glyphicon-pencil').click(function(event) {
-        switchToForm();
+        currentForm();
+        $("#fname").val(data[2].first_name);
+        $("#sname").val(data[0].second_name);
+        $("#email").val(data[0].email);
+        $("#pwd").val('newTxtmm');
+        $("#gender").val(data[0].gender);
+        $("#date").val('newTxt');
     });
 });

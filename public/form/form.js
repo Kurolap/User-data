@@ -13,21 +13,29 @@ $(document).ready(function() {
         var email = $("#email").val();
         var pwd = $("#pwd").val();
         var gender = $("#gender").val();
-        var date = $("#date").val();
-        var age = $("date").val();
+        var person_age = calculateAgeByBirthday();
+        var new_user_id = data.length + 1;
+
         var new_user = {
-            id: 4,
+            id: new_user_id,
             first_name: fname,
             second_name: sname,
             gender: gender,
-            age: 29,
+            age: person_age,
             email: email,
-            password:pwd
+            password: pwd
         };
         data.push(new_user);
         $('#form').hide();
         $('#list').show();
-       console.log(data);
        render();
     });
+
+    function calculateAgeByBirthday(){
+        var time = new Date();
+        var birthDate = new Date($('#date').val());
+        var diff = new Date(time - birthDate);
+        var person_age = diff.getFullYear() - 1970;
+        return person_age;
+    }
 });
