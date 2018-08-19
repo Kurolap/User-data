@@ -3,6 +3,9 @@ var data = [
     {id: "1", first_name: "Ivan", second_name: "Petrov", gender: "male", age: 28, email: "petrov@mail.com"},
     {id: "2", first_name: "Elena", second_name: "Sidorova", gender: "female", age: 25, email: "sidorova@mail.com"},
 ];
+var isEdit = false;
+var personId = null;
+
 function render() {
     var content = "";
     _.each(data, function(person) {

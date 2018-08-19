@@ -19,17 +19,19 @@ $(document).ready(function() {
 
     $('#add').click(function(event) {
         switchToAdd();
+        isEdit = false;
     });
 
     $('.glyphicon-pencil').click(function(event) {
         switchtoEdit();
-        var id = event.target.attributes.id.value;
-        console.log(event);
-        $("#fname").val(data[id].first_name);
-        $("#sname").val(data[id].second_name);
-        $("#email").val(data[id].email);
+        isEdit = true;
+        personId = event.target.attributes.id.value;
+        console.log(personId);
+        $("#fname").val(data[personId].first_name);
+        $("#sname").val(data[personId].second_name);
+        $("#email").val(data[personId].email);
         $("#pwd").val('newTxtmm');
-        $("#gender").val(data[id].gender);
+        $("#gender").val(data[personId].gender);
         $("#date").val('newTxt');
     });
 });

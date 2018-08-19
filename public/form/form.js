@@ -14,18 +14,33 @@ $(document).ready(function() {
         var pwd = $("#pwd").val();
         var gender = $("#gender").val();
         var person_age = calculateAgeByBirthday();
-        var new_user_id = data.length + 1;
+        if (isEdit === true) {
+            data[personId] = {
+                id: personId,
+                first_name: fname,
+                second_name: sname,
+                gender: gender,
+                age: person_age,
+                email: email,
+                password: pwd
+            };
+        }
+        else
+        {
+            var new_user_id = data.length + 1;
 
-        var new_user = {
-            id: new_user_id,
-            first_name: fname,
-            second_name: sname,
-            gender: gender,
-            age: person_age,
-            email: email,
-            password: pwd
-        };
-        data.push(new_user);
+            var new_user = {
+                id: new_user_id,
+                first_name: fname,
+                second_name: sname,
+                gender: gender,
+                age: person_age,
+                email: email,
+                password: pwd
+            };
+            data.push(new_user);
+        }
+
         $('#form').hide();
         $('#list').show();
        render();
@@ -37,5 +52,6 @@ $(document).ready(function() {
         var diff = new Date(time - birthDate);
         var person_age = diff.getFullYear() - 1970;
         return person_age;
+        console.log(diff);
     }
 });
