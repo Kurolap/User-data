@@ -38,7 +38,7 @@ function render() {
             "<td>"+person.first_name+"</td>" +
             "<td>"+person.second_name+"</td>" +
             "<td>"+person.gender+"</td>" +
-            "<td>"+person.calculateAgeByBirth_date()+"</td>" +
+            "<td>"+123+"</td>" +
             "<td>"+person.email+"</td>" +
             "<td><span title='edit' class='glyphicon glyphicon-pencil' id='"+person.id+"' ></span></td>" +
             "<td><span title='delete' class='glyphicon glyphicon-trash' id='"+person.id+"'></span></td></td>" +
@@ -46,6 +46,7 @@ function render() {
     });
     $('#content').html(content);
     createFunctionRemove();
+    createFunctionEdit();
 }
 
 function createFunctionRemove() {
@@ -58,6 +59,26 @@ function createFunctionRemove() {
             });
             render();
         }
+    });
+}
+
+function switchtoEdit() {
+    $('#form').show();
+    $('#list').hide();
+}
+
+function createFunctionEdit(){
+    $('.glyphicon-pencil').click(function(event) {
+        switchtoEdit();
+        isEdit = true;
+        personId = event.target.attributes.id.value;
+        console.log(personId);
+        $("#fname").val(data[personId].first_name);
+        $("#sname").val(data[personId].second_name);
+        $("#email").val(data[personId].email);
+        $("#pwd").val('newTxtmm');
+        $("#gender").val(data[personId].gender);
+        $("#date").val('newTxt');
     });
 }
 
@@ -77,3 +98,4 @@ $(document).ready(function() {
     });
 
 });
+
