@@ -1,7 +1,31 @@
 var data = [
-    {id: "0", first_name: "Sergey", second_name: "Akulov", gender: "male", age: 29, email: "akulov@mail.com"},
-    {id: "1", first_name: "Ivan", second_name: "Petrov", gender: "male", age: 28, email: "petrov@mail.com"},
-    {id: "2", first_name: "Elena", second_name: "Sidorova", gender: "female", age: 25, email: "sidorova@mail.com"},
+    {id: "0", first_name: "Sergey", second_name: "Akulov", gender: "male", birth_date: '1988-05-21', email: "akulov@mail.com",
+        calculateAgeByBirth_date: function(){
+            var currentdate = new Date(this.birth_date);
+            var birthdate = new Date();
+            var diff_age = new Date (birthdate - currentdate);
+            var age1 = diff_age.getFullYear()- 1970;
+            return age1;
+        }
+    },
+    {id: "1", first_name: "Ivan", second_name: "Petrov", gender: "male", birth_date: '1986-10-12', email: "petrov@mail.com",
+        calculateAgeByBirth_date: function(){
+            var currentdate = new Date(this.birth_date);
+            var birthdate = new Date();
+            var diff_age = new Date (birthdate - currentdate);
+            var age1 = diff_age.getFullYear()- 1970;
+            return age1;
+        }
+    },
+    {id: "2", first_name: "Elena", second_name: "Sidorova", gender: "female", birth_date: '1980-06-07', email: "sidorova@mail.com",
+        calculateAgeByBirth_date: function(){
+            var currentdate = new Date(this.birth_date);
+            var birthdate = new Date();
+            var diff_age = new Date (birthdate - currentdate);
+            var age1 = diff_age.getFullYear()- 1970;
+            return age1;
+        }
+    },
 ];
 var isEdit = false;
 var personId = null;
@@ -14,7 +38,7 @@ function render() {
             "<td>"+person.first_name+"</td>" +
             "<td>"+person.second_name+"</td>" +
             "<td>"+person.gender+"</td>" +
-            "<td>"+person.age+"</td>" +
+            "<td>"+person.calculateAgeByBirth_date()+"</td>" +
             "<td>"+person.email+"</td>" +
             "<td><span title='edit' class='glyphicon glyphicon-pencil' id='"+person.id+"' ></span></td>" +
             "<td><span title='delete' class='glyphicon glyphicon-trash' id='"+person.id+"'></span></td></td>" +
