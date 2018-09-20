@@ -1,34 +1,24 @@
 var data = [
-    {id: "0", first_name: "Sergey", second_name: "Akulov", gender: "male", birth_date: '1988-05-21', email: "akulov@mail.com",
-        calculateAgeByBirth_date: function(){
-            var currentdate = new Date(this.birth_date);
-            var birthdate = new Date();
-            var diff_age = new Date (birthdate - currentdate);
-            var age1 = diff_age.getFullYear()- 1970;
-            return age1;
-        }
+    {id: 0, first_name: "Sergey", second_name: "Akulov", gender: "male", birth_date: '1988-05-21', email: "akulov@mail.com",
+        age: calculateAgeByBirth_date('1988-05-21')
     },
-    {id: "1", first_name: "Ivan", second_name: "Petrov", gender: "male", birth_date: '1986-10-12', email: "petrov@mail.com",
-        calculateAgeByBirth_date: function(){
-            var currentdate = new Date(this.birth_date);
-            var birthdate = new Date();
-            var diff_age = new Date (birthdate - currentdate);
-            var age1 = diff_age.getFullYear()- 1970;
-            return age1;
-        }
+    {id: 1, first_name: "Ivan", second_name: "Petrov", gender: "male", birth_date: '1985-10-28', email: "petrov@mail.com",
+        age: calculateAgeByBirth_date('1985-10-28')
     },
-    {id: "2", first_name: "Elena", second_name: "Sidorova", gender: "female", birth_date: '1980-06-07', email: "sidorova@mail.com",
-        calculateAgeByBirth_date: function(){
-            var currentdate = new Date(this.birth_date);
-            var birthdate = new Date();
-            var diff_age = new Date (birthdate - currentdate);
-            var age1 = diff_age.getFullYear()- 1970;
-            return age1;
-        }
+    {id: 2, first_name: "Elena", second_name: "Sidorova", gender: "female", birth_date: '1976-08-08', email: "sidorova@mail.com",
+        age: calculateAgeByBirth_date('1976-08-08')
     },
 ];
 var isEdit = false;
 var personId = null;
+
+function calculateAgeByBirth_date(birth_date){
+    var birthDate = new Date(birth_date);
+    var currentDate = new Date();
+    var diff_age = new Date(currentDate - birthDate);
+    var persn_age = diff_age.getFullYear()- 1970;
+    return persn_age;
+}
 
 function render() {
     var content = "";
@@ -38,7 +28,7 @@ function render() {
             "<td>"+person.first_name+"</td>" +
             "<td>"+person.second_name+"</td>" +
             "<td>"+person.gender+"</td>" +
-            "<td>"+123+"</td>" +
+            "<td>"+person.age+"</td>" +
             "<td>"+person.email+"</td>" +
             "<td><span title='edit' class='glyphicon glyphicon-pencil' id='"+person.id+"' ></span></td>" +
             "<td><span title='delete' class='glyphicon glyphicon-trash' id='"+person.id+"'></span></td></td>" +
@@ -51,7 +41,7 @@ function render() {
 
 function createFunctionRemove() {
     $('.glyphicon-trash').click(function(event) {
-        var id = event.target.id;
+        var id = parseInt(event.target.id);
         var id_conf = confirm("Are you sure to remove this user from the list?");
         if (id_conf == true) {
             data = _.filter(data, function(person) {
