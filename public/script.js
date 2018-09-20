@@ -68,7 +68,7 @@ function createFunctionEdit(){
         $("#email").val(data[personId].email);
         $("#pwd").val('newTxtmm');
         $("#gender").val(data[personId].gender);
-        $("#date").val('newTxt');
+        $("#date").val(data[personId].birth_date);
     });
 }
 
