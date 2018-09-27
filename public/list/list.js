@@ -15,5 +15,6 @@ $(document).ready(function() {
     $('#add').click(function(event) {
         switchToAdd();
         isEdit = false;
+        $("#save-btn").prop('disabled', true);
     });
 });

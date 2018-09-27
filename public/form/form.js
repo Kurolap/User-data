@@ -54,12 +54,28 @@ $(document).ready(function() {
         return person_age;
         console.log(diff);
     }
-
-   // $("#fname").change(function(){alert("Содержимое тестового поля с именем было изменено.")});
-    //$("#sname").change(function(){alert("Содержимое тестового поля с фамилией было изменено.")});
-    //$("#pwd").change(function(){alert("Содержимое тестового поля с паролем было изменено.")});
-    //$("#email").change(function(){alert("Содержимое тестового поля с почтой было изменено.")});
-   // $("#gender").change(function(){alert("Содержимое тестового поля с полом было изменено.")});
-   // $("#date").change(function(){alert("Содержимое тестового поля с датой было изменено.")});
+    $('.form-control').change(function() {
+        if ($('#sname').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else if ($('#fname').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else if ($('#email').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else if ($('#pwd').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else if ($('#gender').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else if ($('#date').val() === "") {
+            $("#save-btn").prop('disabled', true);
+        }
+        else {
+            $("#save-btn").prop('disabled', false);
+        }
+    });
 
 });

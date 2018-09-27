@@ -9,3 +9,13 @@
 #cancel-btn {
     margin: 10px auto;
 }
+#rectangle {
+    width: 60px;
+    height: 35px;
+    background: red;
+    margin: 10px auto;
+    position: absolute;
+    top: 362px;
+    left: 341px;
+    visibility: hidden;
+}
