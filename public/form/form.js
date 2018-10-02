@@ -8,11 +8,11 @@ $(document).ready(function() {
 
     $('#save-btn').click(function(event) {
         event.preventDefault();
-        var fname = $("#fname").val();
-        var sname = $("#sname").val();
-        var email = $("#email").val();
-        var pwd = $("#pwd").val();
-        var gender = $("#gender").val();
+        var fname = $('#fname').val();
+        var sname = $('#sname').val();
+        var email = $('#email').val();
+        var pwd = $('#pwd').val();
+        var gender = $('#gender').val();
         var person_age = calculateAgeByBirthday();
         if (isEdit === true) {
             data[personId] = {
@@ -54,27 +54,37 @@ $(document).ready(function() {
         return person_age;
         console.log(diff);
     }
+    
+    
     $('.form-control').change(function() {
-        if ($('#sname').val() === "") {
-            $("#save-btn").prop('disabled', true);
+
+        var errorMsg = '';
+        
+        if (!$('#sname').val()) {
+            errorMsg += ' Surname is empty. ';
         }
-        else if ($('#fname').val() === "") {
-            $("#save-btn").prop('disabled', true);
+        if (!$('#fname').val()) {
+            errorMsg += ' First name is empty. ';
         }
-        else if ($('#email').val() === "") {
-            $("#save-btn").prop('disabled', true);
+        if (!$('#email').val()) {
+            errorMsg += ' Email is empty. ';
         }
-        else if ($('#pwd').val() === "") {
-            $("#save-btn").prop('disabled', true);
+        if (!$('#pwd').val()) {
+            errorMsg += ' Password is empty. ';
+            console.log($('#pwd').val())
         }
-        else if ($('#gender').val() === "") {
-            $("#save-btn").prop('disabled', true);
+        if (!$('#gender').val()) {
+            errorMsg += ' Gender is empty. ';
         }
-        else if ($('#date').val() === "") {
-            $("#save-btn").prop('disabled', true);
+        if (!$('#date').val()) {
+            errorMsg += ' Birth date is empty. ';
+        }
+        $('#error_msg').text(errorMsg);
+        if (errorMsg) {
+            $('#save-btn').prop('disabled', true);
         }
         else {
-            $("#save-btn").prop('disabled', false);
+            $('#save-btn').prop('disabled', false);
         }
     });
 
