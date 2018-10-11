@@ -16,5 +16,20 @@ $(document).ready(function() {
         switchToAdd();
         isEdit = false;
         $("#save-btn").prop('disabled', true);
+        $('#email').val('');
+        $('#pwd').val('');
+    });
+
+    $('#search_btn').click(function(event) {
+        var search = $('#search').val();
+        if (!search) {
+            filteredData = _.clone(data);
+        } else {
+            filteredData = data.filter(function (item) {
+                return item.id == search || item.first_name == search || item.second_name == search || item.email == search ||
+                item.gender == search || item.age == search;
+            });
+        }
+        render();
     });
 });

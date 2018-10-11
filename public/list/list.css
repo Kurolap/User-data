@@ -6,3 +6,9 @@
 .glyphicon {
     cursor: pointer;
 }
+#add {
+    margin-right: 100px !important;
+}
+#search {
+    height: 35px;
+}

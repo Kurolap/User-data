@@ -71,7 +71,6 @@ $(document).ready(function() {
         }
         if (!$('#pwd').val()) {
             errorMsg += ' Password is empty. ';
-            console.log($('#pwd').val())
         }
         if (!$('#gender').val()) {
             errorMsg += ' Gender is empty. ';
