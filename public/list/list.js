@@ -26,8 +26,8 @@ $(document).ready(function() {
             filteredData = _.clone(data);
         } else {
             filteredData = data.filter(function (item) {
-                return item.id == search || item.first_name == search || item.second_name == search || item.email == search ||
-                item.gender == search || item.age == search;
+                return item.id.toString().indexOf(search) != -1 || item.first_name.indexOf(search) != -1 || item.second_name.indexOf(search) != -1 || item.email.indexOf(search) != -1 ||
+                item.gender.indexOf(search) != -1 || item.age.toString().indexOf(search) != -1;
             });
         }
         render();
