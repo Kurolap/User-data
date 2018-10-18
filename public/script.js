@@ -30,7 +30,6 @@
 
     var filteredData = _.clone(data);
 
-
     var isEdit = false;
     var personId = null;
 
@@ -44,7 +43,7 @@
 
     function render() {
         var content = "";
-        _.each(filteredData, function (person) {
+        _.each(data, function (person) {
             content += "<tr>" +
                 "<td>" + person.id + "</td>" +
                 "<td>" + person.first_name + "</td>" +
