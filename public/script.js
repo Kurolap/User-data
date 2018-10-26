@@ -68,6 +68,7 @@
                 data = _.filter(data, function (person) {
                     return person.id !== id;
                 });
+                console.log(data)
                 render();
             }
         });
@@ -82,8 +83,7 @@
         $('.glyphicon-pencil').click(function (event) {
             switchtoEdit();
             isEdit = true;
-            personId = event.target.attributes.id.value;
-            console.log(personId);
+            personId = parseInt(event.target.attributes.id.value);
             $("#fname").val(data[personId].first_name);
             $("#sname").val(data[personId].second_name);
             $("#email").val(data[personId].email);
