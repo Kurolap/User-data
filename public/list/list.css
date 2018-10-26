@@ -10,5 +10,14 @@
     margin-right: 100px !important;
 }
 #search {
+     height: 35px;
+ }
+#apply_btn {
+    position: absolute;
+    right: 150px;
     height: 35px;
+}
+#select {
+    position: absolute;
+    right: 220px;
 }

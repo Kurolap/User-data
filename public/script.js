@@ -10,7 +10,7 @@
         },
         {
             id: 1,
-            first_name: "Ivan",
+            first_name: "Tom",
             second_name: "Petrov",
             gender: "male",
             birth_date: '1985-10-28',

@@ -21,90 +21,123 @@ $(document).ready(function() {
     });
 
     $('#search_btn').click(function(event) {
-        var search = $('#search').val();
+        var search = $('#search').val().toLowerCase();
+
         if (!search) {
-            filteredData = _.clone(data);
+            data = _.clone(data);
         } else {
-            filteredData = data.filter(function (item) {
-                return item.id.toString().indexOf(search) != -1 || item.first_name.indexOf(search) != -1 || item.second_name.indexOf(search) != -1 || item.email.indexOf(search) != -1 ||
-                item.gender.indexOf(search) != -1 || item.age.toString().indexOf(search) != -1;
+            data = data.filter(function (item) {
+                var id = item.id.toString().toLowerCase();
+                var first_name = item.first_name.toLowerCase();
+                var sec_name = item.second_name.toLowerCase();
+                var gender = item.gender.toLowerCase();
+                var email = item.email.toLowerCase();
+                var age = item.age.toString().toLowerCase();
+                return id.indexOf(search) != -1 || first_name.indexOf(search) != -1 || sec_name.indexOf(search) != -1 ||
+                    email.indexOf(search) != -1 || gender.indexOf(search) != -1 || age.indexOf(search) != -1;
             });
         }
         render();
     });
 
+    var fn_btn_click = false;
+
     $('#first_name_btn').click(function(event) {
-        function compareId(a, b) {
-            if(a.first_name < b.first_name) return -1;
-            if(a.first_name > b.first_name) return 1;
-            return 0;
+        if  (fn_btn_click === false) {
+            function compareId(a, b) {
+                if(a.first_name < b.first_name) return -1;
+                if(a.first_name > b.first_name) return 1;
+                return 0;
+            }
+            sortable = data.sort(compareId);
+        console.log('var is true')
+            fn_btn_click = true;}
+        else {
+            sortable = sortable.reverse();
+            console.log('var is false')
+            fn_btn_click = false;
         }
-    sortable = data.sort(compareId);
-        console.log(sortable)
+       console.log(sortable)
         render();
     });
 
+    var sn_btn_click = false;
+
     $('#second_name_btn').click(function(event) {
+        if  (sn_btn_click === false) {
         function compareSn(a, b) {
             if(a.second_name < b.second_name) return -1;
             if(a.second_name > b.second_name) return 1;
             return 0;
         }
         sortable = data.sort(compareSn);
+            sn_btn_click = true;
+        }
+        else {
+            sortable = sortable.reverse();
+            sn_btn_click = false;
+        }
         console.log(sortable)
         render();
     });
 
+    var gnd_btn_click = false;
+
     $('#gender_btn').click(function(event) {
+        if  (gnd_btn_click === false) {
         function compareGn(a, b) {
             if(a.gender < b.gender) return -1;
             if(a.gender > b.gender) return 1;
             return 0;
         }
         sortable = data.sort(compareGn);
+            gnd_btn_click = true;
+        }
+        else {
+            sortable = sortable.reverse();
+            gnd_btn_click = false;
+        }
         console.log(sortable)
         render();
     });
 
+    var em_btn_click = false;
+
     $('#email_btn').click(function(event) {
+        if  (em_btn_click === false) {
         function compareEm(a, b) {
             if(a.email < b.email) return -1;
             if(a.email > b.email) return 1;
             return 0;
         }
         sortable = data.sort(compareEm);
+            em_btn_click = true;
+        }
+        else {
+            sortable = sortable.reverse();
+            em_btn_click = false;
+        }
         console.log(sortable)
         render();
     });
 
+    var age_btn_click = false;
+
     $('#age_btn').click(function(event) {
+        if  (age_btn_click === false) {
         function compareAge(a, b) {
             if(a.age < b.age) return -1;
             if(a.age > b.age) return 1;
             return 0;
         }
         sortable = data.sort(compareAge);
+            age_btn_click = true;
+        }
+        else {
+            sortable = sortable.reverse();
+            age_btn_click = false;
+        }
         console.log(sortable)
         render();
     });
-
-    function render_sort() {
-        var content = "";
-        _.each(sortable, function (person) {
-            content += "<tr>" +
-                "<td>" + person.id + "</td>" +
-                "<td>" + person.first_name + "</td>" +
-                "<td>" + person.second_name + "</td>" +
-                "<td>" + person.gender + "</td>" +
-                "<td>" + person.age + "</td>" +
-                "<td>" + person.email + "</td>" +
-                "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
-                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
-                "</tr>";
-        });
-        $('#content').html(content);
-        createFunctionRemove();
-        createFunctionEdit();
-    }
-
 });
