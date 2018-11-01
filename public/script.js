@@ -29,6 +29,7 @@
     ];
 
     var filteredData = _.clone(data);
+    var filt = [];
 
     var isEdit = false;
     var personId = null;
@@ -91,6 +92,25 @@
             $("#gender").val(data[personId].gender);
             $("#date").val(data[personId].birth_date);
         });
+    }
+
+    function reRender() {
+        var content = "";
+        _.each(filt, function (person) {
+            content += "<tr>" +
+                "<td>" + person.id + "</td>" +
+                "<td>" + person.first_name + "</td>" +
+                "<td>" + person.second_name + "</td>" +
+                "<td>" + person.gender + "</td>" +
+                "<td>" + person.age + "</td>" +
+                "<td>" + person.email + "</td>" +
+                "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
+                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
+                "</tr>";
+        });
+        $('#content').html(content);
+        createFunctionRemove();
+        createFunctionEdit();
     }
 
 

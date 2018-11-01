@@ -1,19 +1,18 @@
 <link rel="stylesheet" href="list/list.css">
 <script src="list/list.js"></script>
-
 <h1>Users List</h1>
 <div>
     <button class="btn btn-primary" id="add">Add</button>
     <input id="search" placeholder='search'>
     <button class="btn btn-primary" id="search_btn">Search</button>
-    <button class="btn btn-info" id="apply_btn">Apply</button>
-    <select id="select">
-        <option>Show by 2 results per page</option>
-        <option>Show by 3 results per page</option>
-        <option>Show by 5 results per page</option>
-        <option>Show by 10 results per page</option>
-        <option>Show by all results per page</option>
+    <select class="selectpicker" id="page_select">
+        <option value="2">Show by 2 results per page</option>
+        <option value="3">Show by 3 results per page</option>
+        <option value="5">Show by 5 results per page</option>
+        <option value="10">Show by 10 results per page</option>
+        <option value="0">Show by all results per page</option>
     </select>
+    <button class="btn btn-info" id="pagination_btn">Apply</button>
 </div>
 <table class="table table-bordered table-striped list" border="1">
     <thead>
@@ -30,4 +29,5 @@
     </thead>
     <tbody id="content"></tbody>
 </table>
+
 

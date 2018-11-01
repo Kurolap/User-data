@@ -1,5 +1,8 @@
 $(document).ready(function() {
-   render();
+
+    $('.selectpicker').selectpicker();
+
+    render();
    function switchToAdd() {
        $('#form').show();
        $('#list').hide();
@@ -139,5 +142,19 @@ $(document).ready(function() {
         }
         console.log(sortable)
         render();
+    });
+
+        $('#pagination_btn').click(function(event) {
+        var sel = parseInt($('#page_select').val());
+        if (sel === 0) {
+            filt = _.clone(data);
+        } else {
+            filt = data.filter(function(el) {
+                return el.id < sel;
+            });
+        }
+
+        reRender();
+
     });
 });

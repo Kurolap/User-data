@@ -14,10 +14,11 @@
  }
 #apply_btn {
     position: absolute;
-    right: 150px;
+    right: 550px;
     height: 35px;
 }
-#select {
-    position: absolute;
-    right: 220px;
+
+#search_btn {
+    margin-right: 50px;
+    margin-top: -2px;
 }
