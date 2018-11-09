@@ -26,6 +26,249 @@
             email: "sidorova@mail.com",
             age: calculateAgeByBirth_date('1976-08-08')
         },
+        {
+            id: 3,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 4,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 5,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 6,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 7,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 8,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 9,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 10,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 11,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 12,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 13,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 14,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 15,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 16,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 17,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 18,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 19,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 20,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 21,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 22,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 23,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 24,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 25,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 26,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
+        {
+            id: 27,
+            first_name: "Sergey",
+            second_name: "Akulov",
+            gender: "male",
+            birth_date: '1988-05-21',
+            email: "akulov@mail.com",
+            age: calculateAgeByBirth_date('1988-05-21')
+        },
+        {
+            id: 28,
+            first_name: "Tom",
+            second_name: "Petrov",
+            gender: "male",
+            birth_date: '1985-10-28',
+            email: "petrov@mail.com",
+            age: calculateAgeByBirth_date('1985-10-28')
+        },
+        {
+            id: 29,
+            first_name: "Elena",
+            second_name: "Sidorova",
+            gender: "female",
+            birth_date: '1976-08-08',
+            email: "sidorova@mail.com",
+            age: calculateAgeByBirth_date('1976-08-08')
+        },
     ];
 
     var filteredData = _.clone(data);

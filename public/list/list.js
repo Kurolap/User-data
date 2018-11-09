@@ -144,17 +144,36 @@ $(document).ready(function() {
         render();
     });
 
-        $('#pagination_btn').click(function(event) {
-        var sel = parseInt($('#page_select').val());
-        if (sel === 0) {
+    $('#pagination_btn').click(function(event) {
+        var resultsNumber = parseInt($('#page_select').val());
+        if (resultsNumber === 0) {
             filt = _.clone(data);
         } else {
             filt = data.filter(function(el) {
-                return el.id < sel;
+                return el.id < resultsNumber;
             });
         }
-
         reRender();
 
+        var pagesNumber = Math.ceil(data.length/resultsNumber)
+        console.log('pagesNumber', pagesNumber)
+
+        var content = "";
+        for (var i = 1; i <= pagesNumber; i++) {
+            content += "<button type='button' class='btn btn-default color-blue page_btn'><i>"+i+"</i></button>";
+        }
+        $('#pagination_buttons').html(content);
+        $('.page_btn').click(function(event) {
+            var currentPage = parseInt(event.target.innerText);
+            filt = data.filter(function(el, index) {
+                var startWithIndex = (currentPage-1)*resultsNumber-1;
+                var endWithIndex = startWithIndex + resultsNumber;
+                return index > startWithIndex && index <= endWithIndex;
+            })
+            console.log('currentPage', currentPage)
+            reRender();
+        });
+
     });
+
 });

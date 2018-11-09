@@ -8,6 +8,7 @@
 }
 #add {
     margin-right: 100px !important;
+    display: inline;
 }
 #search {
      height: 35px;
@@ -22,3 +23,18 @@
     margin-right: 50px;
     margin-top: -2px;
 }
+/*
+.num {
+    display: none;
+}
+.paginator {
+    line-height: 150%;
+}
+.paginator > span {
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.paginator_active {
+    color: red;
+}*/
