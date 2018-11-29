@@ -1,278 +1,7 @@
-    var data = [
-        {
-            id: 0,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 1,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 2,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 3,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 4,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 5,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 6,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 7,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 8,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 9,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 10,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 11,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 12,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 13,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 14,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 15,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 16,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 17,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 18,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 19,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 20,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 21,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 22,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 23,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 24,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 25,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 26,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-        {
-            id: 27,
-            first_name: "Sergey",
-            second_name: "Akulov",
-            gender: "male",
-            birth_date: '1988-05-21',
-            email: "akulov@mail.com",
-            age: calculateAgeByBirth_date('1988-05-21')
-        },
-        {
-            id: 28,
-            first_name: "Tom",
-            second_name: "Petrov",
-            gender: "male",
-            birth_date: '1985-10-28',
-            email: "petrov@mail.com",
-            age: calculateAgeByBirth_date('1985-10-28')
-        },
-        {
-            id: 29,
-            first_name: "Elena",
-            second_name: "Sidorova",
-            gender: "female",
-            birth_date: '1976-08-08',
-            email: "sidorova@mail.com",
-            age: calculateAgeByBirth_date('1976-08-08')
-        },
-    ];
-
+    var data = [];
     var filteredData = _.clone(data);
     var filt = [];
+    var data_search = [];
 
     var isEdit = false;
     var personId = null;
@@ -287,6 +16,10 @@
 
     function render() {
         var content = "";
+       // localStorage.clear();
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
+        console.log(strData)
         _.each(data, function (person) {
             content += "<tr>" +
                 "<td>" + person.id + "</td>" +
@@ -296,7 +29,7 @@
                 "<td>" + person.age + "</td>" +
                 "<td>" + person.email + "</td>" +
                 "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
-                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
+                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td>" +
                 "</tr>";
         });
         $('#content').html(content);
@@ -305,6 +38,8 @@
     }
 
     function createFunctionRemove() {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         $('.glyphicon-trash').click(function (event) {
             var id = parseInt(event.target.id);
             var id_conf = confirm("Are you sure to remove this user from the list?");
@@ -312,7 +47,9 @@
                 data = _.filter(data, function (person) {
                     return person.id !== id;
                 });
-                console.log(data)
+                var strData = JSON.stringify(data);
+                console.log(strData)
+                localStorage.setItem('data', strData);
                 render();
             }
         });
@@ -328,17 +65,24 @@
             switchtoEdit();
             isEdit = true;
             personId = parseInt(event.target.attributes.id.value);
-            $("#fname").val(data[personId].first_name);
-            $("#sname").val(data[personId].second_name);
-            $("#email").val(data[personId].email);
+            var strData = localStorage.getItem('data');
+            var data = JSON.parse(strData) || [];
+            var person = _.find(data, function(person) {
+                return person.id === personId;
+            });
+            $("#fname").val(person.first_name);
+            $("#sname").val(person.second_name);
+            $("#email").val(person.email);
             $("#pwd").val('newTxtmm');
-            $("#gender").val(data[personId].gender);
-            $("#date").val(data[personId].birth_date);
+            $("#gender").val(person.gender);
+            $("#date").val(person.birth_date);
         });
     }
 
     function reRender() {
         var content = "";
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         _.each(filt, function (person) {
             content += "<tr>" +
                 "<td>" + person.id + "</td>" +
@@ -356,6 +100,43 @@
         createFunctionEdit();
     }
 
+    function renderSearch() {
+        var content = "";
+        _.each(data_search, function (person) {
+            content += "<tr>" +
+                "<td>" + person.id + "</td>" +
+                "<td>" + person.first_name + "</td>" +
+                "<td>" + person.second_name + "</td>" +
+                "<td>" + person.gender + "</td>" +
+                "<td>" + person.age + "</td>" +
+                "<td>" + person.email + "</td>" +
+                "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
+                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
+                "</tr>";
+        });
+        $('#content').html(content);
+        createFunctionRemove();
+        createFunctionEdit();
+    }
+
+    function renderSort() {
+        var content = "";
+        _.each(sortable, function (person) {
+            content += "<tr>" +
+                "<td>" + person.id + "</td>" +
+                "<td>" + person.first_name + "</td>" +
+                "<td>" + person.second_name + "</td>" +
+                "<td>" + person.gender + "</td>" +
+                "<td>" + person.age + "</td>" +
+                "<td>" + person.email + "</td>" +
+                "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
+                "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
+                "</tr>";
+        });
+        $('#content').html(content);
+        createFunctionRemove();
+        createFunctionEdit();
+    }
 
     $(document).ready(function () {
 

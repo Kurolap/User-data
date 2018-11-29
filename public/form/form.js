@@ -7,6 +7,8 @@ $(document).ready(function() {
     });
 
     $('#save-btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         event.preventDefault();
         var fname = $('#fname').val();
         var sname = $('#sname').val();
@@ -14,6 +16,7 @@ $(document).ready(function() {
         var pwd = $('#pwd').val();
         var gender = $('#gender').val();
         var person_age = calculateAgeByBirthday();
+        console.log(data.length)
         if (isEdit === true) {
             data[personId] = {
                 id: personId,
@@ -27,7 +30,9 @@ $(document).ready(function() {
         }
         else
         {
-            var new_user_id = data.length;
+            var new_user = _.maxBy(data, function(person) { return person.id; });
+            var new_user_id = new_user ? new_user.id + 1 : 1;
+            console.log(new_user_id)
 
             var new_user = {
                 id: new_user_id,
@@ -40,10 +45,12 @@ $(document).ready(function() {
             };
             data.push(new_user);
         }
-
         $('#form').hide();
         $('#list').show();
-       render();
+        var strData = JSON.stringify(data);
+        console.log(strData)
+        localStorage.setItem('data', strData);
+        render();
     });
 
     function calculateAgeByBirthday(){

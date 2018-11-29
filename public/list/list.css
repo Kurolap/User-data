@@ -23,18 +23,21 @@
     margin-right: 50px;
     margin-top: -2px;
 }
+.page_btn_light {
+    background: lightblue;
+}
 /*
-.num {
-    display: none;
-}
-.paginator {
-    line-height: 150%;
-}
-.paginator > span {
-    display: inline-block;
-    margin-right: 10px;
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
     cursor: pointer;
 }
-.paginator_active {
-    color: red;
-}*/
+
+
+.active, .btn:hover {
+    background-color: #666;
+    color: white;
+}
+*/

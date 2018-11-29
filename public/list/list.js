@@ -24,12 +24,15 @@ $(document).ready(function() {
     });
 
     $('#search_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         var search = $('#search').val().toLowerCase();
+        console.log(data)
 
         if (!search) {
-            data = _.clone(data);
+            data_search = _.clone(data);
         } else {
-            data = data.filter(function (item) {
+            data_search = data.filter(function (item) {
                 var id = item.id.toString().toLowerCase();
                 var first_name = item.first_name.toLowerCase();
                 var sec_name = item.second_name.toLowerCase();
@@ -40,12 +43,14 @@ $(document).ready(function() {
                     email.indexOf(search) != -1 || gender.indexOf(search) != -1 || age.indexOf(search) != -1;
             });
         }
-        render();
+        renderSearch();
     });
 
     var fn_btn_click = false;
 
     $('#first_name_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         if  (fn_btn_click === false) {
             function compareId(a, b) {
                 if(a.first_name < b.first_name) return -1;
@@ -61,12 +66,14 @@ $(document).ready(function() {
             fn_btn_click = false;
         }
        console.log(sortable)
-        render();
+        renderSort();
     });
 
     var sn_btn_click = false;
 
     $('#second_name_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         if  (sn_btn_click === false) {
         function compareSn(a, b) {
             if(a.second_name < b.second_name) return -1;
@@ -81,12 +88,14 @@ $(document).ready(function() {
             sn_btn_click = false;
         }
         console.log(sortable)
-        render();
+        renderSort();
     });
 
     var gnd_btn_click = false;
 
     $('#gender_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         if  (gnd_btn_click === false) {
         function compareGn(a, b) {
             if(a.gender < b.gender) return -1;
@@ -101,12 +110,14 @@ $(document).ready(function() {
             gnd_btn_click = false;
         }
         console.log(sortable)
-        render();
+        renderSort();
     });
 
     var em_btn_click = false;
 
     $('#email_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         if  (em_btn_click === false) {
         function compareEm(a, b) {
             if(a.email < b.email) return -1;
@@ -121,12 +132,14 @@ $(document).ready(function() {
             em_btn_click = false;
         }
         console.log(sortable)
-        render();
+        renderSort();
     });
 
     var age_btn_click = false;
 
     $('#age_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         if  (age_btn_click === false) {
         function compareAge(a, b) {
             if(a.age < b.age) return -1;
@@ -141,10 +154,12 @@ $(document).ready(function() {
             age_btn_click = false;
         }
         console.log(sortable)
-        render();
+        renderSort();
     });
 
     $('#pagination_btn').click(function(event) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
         var resultsNumber = parseInt($('#page_select').val());
         if (resultsNumber === 0) {
             filt = _.clone(data);
@@ -160,10 +175,25 @@ $(document).ready(function() {
 
         var content = "";
         for (var i = 1; i <= pagesNumber; i++) {
-            content += "<button type='button' class='btn btn-default color-blue page_btn'><i>"+i+"</i></button>";
+            var idx = "page_numb" + i;
+            content += "<button type='button' id='"+idx+"' class='btn btn-default color-blue page_btn'><i>"+i+"</i></button>";
         }
         $('#pagination_buttons').html(content);
         $('.page_btn').click(function(event) {
+
+           var links = document.querySelectorAll(".page_btn")
+            links.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    console.log('click')
+                    //reset the color of other links
+                    links.forEach(function (item) {
+                        item.style.backgroundColor = '#fff'
+                    })
+                    // apply the style to the link
+                    this.style.backgroundColor = '#ffcce9'
+                });
+            })
+
             var currentPage = parseInt(event.target.innerText);
             filt = data.filter(function(el, index) {
                 var startWithIndex = (currentPage-1)*resultsNumber-1;
@@ -172,8 +202,7 @@ $(document).ready(function() {
             })
             console.log('currentPage', currentPage)
             reRender();
-        });
-
+        })
     });
 
 });
