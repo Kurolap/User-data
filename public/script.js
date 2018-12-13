@@ -25,10 +25,11 @@ function calculateAgeByBirthday(){
 var calculateAgeByBirthday = calculateAgeByBirthday();
 
 function render(data) {
-    var content = "";
-  // localStorage.clear();
-    var strData = localStorage.getItem('data');
-    var data = JSON.parse(strData) || [];
+    var content = ""
+    if (!data) {
+        var strData = localStorage.getItem('data');
+        var data = JSON.parse(strData) || [];
+    }
     _.each(data, function (person) {
         content += "<tr>" +
             "<td>" + person.id + "</td>" +
@@ -88,27 +89,6 @@ function createFunctionEdit() {
     });
 }
 
-/*function reRender() {
-    var content = "";
-    var strData = localStorage.getItem('data');
-    var data = JSON.parse(strData) || [];
-    _.each(filt, function (person) {
-        content += "<tr>" +
-            "<td>" + person.id + "</td>" +
-            "<td>" + person.first_name + "</td>" +
-            "<td>" + person.second_name + "</td>" +
-            "<td>" + person.gender + "</td>" +
-            "<td>" + person.age + "</td>" +
-            "<td>" + person.email + "</td>" +
-            "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
-            "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
-            "</tr>";
-    });
-    $('#content').html(content);
-    createFunctionRemove();
-    createFunctionEdit();
-}
-*/
 function renderSearch() {
     var content = "";
     _.each(data_search, function (person) {
