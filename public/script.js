@@ -89,44 +89,6 @@ function createFunctionEdit() {
     });
 }
 
-function renderSearch() {
-    var content = "";
-    _.each(data_search, function (person) {
-        content += "<tr>" +
-            "<td>" + person.id + "</td>" +
-            "<td>" + person.first_name + "</td>" +
-            "<td>" + person.second_name + "</td>" +
-            "<td>" + person.gender + "</td>" +
-            "<td>" + person.age + "</td>" +
-            "<td>" + person.email + "</td>" +
-            "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
-            "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
-            "</tr>";
-    });
-    $('#content').html(content);
-    createFunctionRemove();
-    createFunctionEdit();
-}
-
-function renderSort() {
-    var content = "";
-    _.each(sortable, function (person) {
-        content += "<tr>" +
-            "<td>" + person.id + "</td>" +
-            "<td>" + person.first_name + "</td>" +
-            "<td>" + person.second_name + "</td>" +
-            "<td>" + person.gender + "</td>" +
-            "<td>" + person.age + "</td>" +
-            "<td>" + person.email + "</td>" +
-            "<td><span title='edit' class='glyphicon glyphicon-pencil' id='" + person.id + "' ></span></td>" +
-            "<td><span title='delete' class='glyphicon glyphicon-trash' id='" + person.id + "'></span></td></td>" +
-            "</tr>";
-    });
-    $('#content').html(content);
-    createFunctionRemove();
-    createFunctionEdit();
-}
-
 $(document).ready(function () {
 
     $.ajax({

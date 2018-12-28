@@ -6,17 +6,15 @@ $('#cancel-btn').click(function(event) {
     $('#list').show();
 });
 
-
-
 $('#save-btn').click(function(event) {
 
-function calculateAgeByBirthday(){
+    function calculateAgeByBirthday(){
     var time = new Date();
     var birthDate = new Date($('#date').val());
     var diff = new Date(time - birthDate);
     var person_age = diff.getFullYear() - 1970;
     return [person_age, birthDate];
-}
+    }
     var calculateAgeByBirthday = calculateAgeByBirthday();
 
     var strData = localStorage.getItem('data');
